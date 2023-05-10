@@ -148,5 +148,3 @@ if __name__ == "__main__":
         print(board1)
         board1.next()
         sleep(0.5)
-
-

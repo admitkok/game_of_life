@@ -1,4 +1,5 @@
-from main import *
+from main import Board
+
 
 def test_create_board():
     test_board = Board(3, 3)
@@ -21,7 +22,7 @@ def test_will_be_alive():
     test_board = Board(3, 3)
     for j in range(3):
         test_board.place_cell(1, j)
-    assert not test_board.will_be_alive(test_board.board, 1, 1)
+    assert test_board.will_be_alive(test_board.board, 1, 1)
 
 
 def test_is_alive():
