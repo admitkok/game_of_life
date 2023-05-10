@@ -117,8 +117,12 @@ class Board(AbstractLifeGameBoard):
             neighbors = [bd[row + dr][col + cr] for dr in (-1, 0) for cr in (0, +1)]
             nb = numpy.sum(neighbors) - bd[row][col]
 
-        if nb == 3:
+        if nb == 2 and bd[row][col] == 1:
             return True
+        elif nb == 3 and bd[row][col] == 0:
+            return True
+        elif nb == 3 and bd[row][col] == 1:
+            return False
         else:
             return False
 
