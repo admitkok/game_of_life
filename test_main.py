@@ -1,4 +1,4 @@
-from main import Board
+from game_of_life.src.game_of_life.main import Board
 
 
 def test_create_board():

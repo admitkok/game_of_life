@@ -1,0 +1,9 @@
+pyproject.toml
+src/game_of_life/main.py
+src/game_of_life/ui.py
+src/game_of_life.egg-info/PKG-INFO
+src/game_of_life.egg-info/SOURCES.txt
+src/game_of_life.egg-info/dependency_links.txt
+src/game_of_life.egg-info/entry_points.txt
+src/game_of_life.egg-info/requires.txt
+src/game_of_life.egg-info/top_level.txt

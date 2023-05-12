@@ -1,6 +1,6 @@
 from typing import NamedTuple
 from asciimatics.screen import Screen
-from main import Board
+from game_of_life.main import Board
 
 
 def place_glider_at_position(board, row_start, col_start):
@@ -55,6 +55,7 @@ class InterfaceController:
             ord("g"): self.place_glider,
         }
         self.run()
+
 
     def run(self):
         while True:

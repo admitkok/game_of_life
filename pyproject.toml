@@ -1,0 +1,10 @@
+[project]
+name = "game_of_life"
+version = "0.1.0"
+authors = [{name = "admitkok", email = "kokov.alexander@gmail.com"}]
+dependencies = ["asciimatics"]
+
+[project.scripts]
+game_of_life = "game_of_life.ui:main"
+
+
