@@ -43,6 +43,7 @@ class Board(AbstractLifeGameBoard):
         super().__init__(width, height)
         self.width = width
         self.height = height
+        self.state = 0
         self.board = []
         for i in range(height):
             self.board.append([])
@@ -122,7 +123,7 @@ class Board(AbstractLifeGameBoard):
         elif nb == 3 and bd[row][col] == 0:
             return True
         elif nb == 3 and bd[row][col] == 1:
-            return False
+            return True
         else:
             return False
 
@@ -134,6 +135,7 @@ class Board(AbstractLifeGameBoard):
                     self.board[i][j] = 1
                 else:
                     self.board[i][j] = 0
+        self.state += 1
 
 
 c = CELL_SYMBOL = "o"
