@@ -56,7 +56,6 @@ class InterfaceController:
         }
         self.run()
 
-
     def run(self):
         while True:
             if not self.paused:
