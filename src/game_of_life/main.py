@@ -1,7 +1,13 @@
 from copy import deepcopy
 from abc import abstractmethod, ABC
 from time import sleep
-import numpy
+
+
+def arr_sum(lst: list[int]) -> int:
+    summ = 0
+    for elem in lst:
+        summ += elem
+    return summ
 
 
 class AbstractLifeGameBoard(ABC):
@@ -84,39 +90,39 @@ class Board(AbstractLifeGameBoard):
             neighbors = [
                 bd[row + dr][col + cr] for dr in (-1, 0, +1) for cr in (-1, 0, +1)
             ]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif 1 <= row < height - 1 and col == 0:
             neighbors = [bd[row + dr][col + cr] for dr in (-1, 0, +1) for cr in (0, +1)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif 1 <= row < height - 1 and col == width - 1:
             neighbors = [bd[row + dr][col + cr] for dr in (-1, 0, +1) for cr in (-1, 0)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif row == 0 and 1 <= col < width - 1:
             neighbors = [bd[row + dr][col + cr] for dr in (0, +1) for cr in (-1, 0, +1)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif row == height - 1 and 1 <= col < width - 1:
             neighbors = [bd[row + dr][col + cr] for dr in (-1, 0) for cr in (-1, 0, +1)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif row == 0 and col == 0:
             neighbors = [bd[row + dr][col + cr] for dr in (0, +1) for cr in (0, +1)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif row == height - 1 and col == width - 1:
             neighbors = [bd[row + dr][col + cr] for dr in (-1, 0) for cr in (-1, 0)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif row == 0 and col == width - 1:
             neighbors = [bd[row + dr][col + cr] for dr in (0, +1) for cr in (-1, 0)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         elif row == height - 1 and col == 0:
             neighbors = [bd[row + dr][col + cr] for dr in (-1, 0) for cr in (0, +1)]
-            nb = numpy.sum(neighbors) - bd[row][col]
+            nb = arr_sum(neighbors) - bd[row][col]
 
         if nb == 2 and bd[row][col] == 1:
             return True
