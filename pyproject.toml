@@ -6,5 +6,3 @@ dependencies = ["asciimatics"]
 
 [project.scripts]
 game_of_life = "game_of_life.ui:main"
-
-
